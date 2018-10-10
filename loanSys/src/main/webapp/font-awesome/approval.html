@@ -1,0 +1,464 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
+    
+    <title>审批</title>
+
+    <link href="css/bootstrap.min.css?v=3.4.0" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css?v=4.3.0" rel="stylesheet">
+    <link href="css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=2.2.0" rel="stylesheet">
+    <link href="css/newStyles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="nav-header">
+
+                        <div class="dropdown profile-element logo">
+                            <h4 class="font-bold">
+                               ChanghongIT
+                            </h4>
+                            <h2 class="font-bold">
+                               员工四费报销系统
+                            </h2>
+                        </div>
+                        <div class="logo-element">
+                            CHIT
+                        </div>
+
+                    </li>
+                    <li class="active">
+                        <a href=""><i class="fa fa-user fa-lg"></i> <span class="nav-label">个人工作区</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="expense.html">报销申请</a></li>
+                            <li><a href="expense_replace.html">代替报销</a></li>
+                            <li><a href="draft.html">草稿箱</a></li>
+                            <li class="active"><a href="Todo.html">待办事宜</a></li>
+                            <li><a href="flow_tracing_processing.html">审批中</a></li>
+                            <li><a href="flow_tracing_end.html">流程结束</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa fa-cog fa-lg"></i> <span class="nav-label">配置工作区</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="relationship.html">对应关系</a></li>
+                            <li><a href="order.html">费用项目倒挤金额顺序配置</a></li>
+                            <li><a href="type.html">发票费用类型、税率配置</a></li>
+                            <li><a href="accountant.html">转其他会计审批</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa fa-search fa-lg"></i> <span class="nav-label">查询工作区</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="query.html">查询</a>
+                            </li>
+                            <li><a href="reportForm.html">报表</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top mbt0" role="navigation">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a> 
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li>
+                            <span class="m-r-sm text-muted welcome-message">
+                                <a href="index.html" title="返回首页" class="home"><i class="fa fa-home"></i> </a>欢迎xxx！
+                            </span>
+                        </li>
+                        <li>
+                            <a href="login.html">
+                                <i class="fa fa-sign-out"></i>退出
+                            </a>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>待审批</h2>
+                    <ol class="breadcrumb">
+                      <li>可针对内容进行审批</li>                          
+                    </ol>                
+                </div>
+            </div>
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <div class="row mbt10">
+                    <div class="col-lg-12">
+                        <div class="ibox-title">
+                            <h5>费用报表信息</h5>
+                        </div>
+                        <div class="ibox-content">
+                          <div class="form-horizontal">
+                            <div class="form-group tar row">
+                                <label class="col-sm-2 control-label">费用报表汇总：</label>
+                                <div class="col-md-1 lht30 fbb">￥1000.00</div>
+                                <label class="col-sm-2 control-label">报销单编号：</label>
+                                <div class="col-md-3 lht30 fbb">ZAR962645</div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row mbt10">
+                    <div class="col-lg-12">
+                        <div class="ibox-title">
+                            <h5>个人一般信息</h5>
+                        </div>
+                        <div class="ibox-content">
+                          <div class="form-horizontal">
+                            <div class="form-group tar row">
+                                <label class="col-sm-2 control-label">申请人：</label>
+                                <div class="col-md-1 lht30">刘利芸</div>
+                                <label class="col-sm-2 control-label">所在部门：</label>
+                                <div class="col-md-3 lht30">信息部</div>
+                                <label class="col-sm-1 control-label">职位：</label>
+                                <div class="col-md-3 lht30">UI设计</div>
+                            </div>
+                            <div class="form-group tar row">
+                                <label class="col-sm-2 control-label">员工报销类型：</label>
+                                <div class="col-md-1 lht30">A类</div>
+                                <label class="col-sm-2 control-label">所属公司：</label>
+                                <div class="col-md-3 lht30">四川长虹佳华信息产品有限责任公司</div>
+                            </div>
+                            <div class="form-group tar row">
+                                <label class="col-sm-2 control-label">报销费用所属期间：</label>
+                                <div class="col-md-1 lht30">2016-7</div>
+                                <label class="col-sm-2 control-label">费用模板：</label>
+                                <div class="col-md-3 lht30">平台人员</div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mbt10">
+                    <div class="col-lg-12">
+                        <div class="ibox-title">
+                            <h5>个人预算信息</h5><div class="textRight"><a href="annualbudget.html" class="btn btn-xs btn-white">查看全年预算信息</a></div>
+                        </div>
+                        <div class="ibox-content mbt10">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr class="textCenter">
+                                            <th class="text-nowrap">项目说明</th>
+                                            <th class="text-nowrap">交通费</th>
+                                            <th class="text-nowrap">通讯费</th>
+                                            <th class="text-nowrap">交际费</th>
+                                            <th class="text-nowrap">业务包干费</th>
+                                            <th class="text-nowrap">日常包干费</th>
+                                            <th class="text-nowrap">差旅费</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody align="center">
+                                        <tr>
+                                            <td>期初预算余额</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>*月预算标准</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr class="c-red">
+                                            <td>*月实际可报额度</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>本次报销</td>
+                                            <td>300</td>
+                                            <td>200</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>500</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>*月历史报销</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>*预算余额</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="alert alert-warning">
+                               <p>业务包干费实际可报额度=交际费×0.8+交通费×0.9×(30-出差天数)/30</p>
+                               <p>交通费实际可报销额度=交通费标准×(30-出差天数)/30</p>
+                            </div>
+                        </div>
+                        
+                        <div class="ibox-title">
+                            <h5>报销费用</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-nowrap">序号</th>
+                                            <th class="text-nowrap">费用类型</th>
+                                            <th class="text-nowrap">费用项目</th>
+                                            <th class="text-nowrap">费用发生日期</th>
+                                            <th class="text-nowrap">实报金额</th>
+                                            <th class="text-nowrap">费用具体事项描述</th>
+                                            <th class="text-nowrap">费用发生地点</th>
+                                            <th class="text-nowrap">被交际单位名称</th>
+                                            <th class="text-nowrap">参加人员总数</th>
+                                            <th class="text-nowrap">参加人员名单</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="verticaltop">1</td>
+                                            <td class="verticaltop">xxxx</td>
+                                            <td class="verticaltop">xxxx</td>
+                                            <td class="verticaltop">2016-07-05</td>
+                                            <td class="verticaltop">12345.00</td>
+                                            <td class="textwrap">费用具体事项描述费用具体事项描述费用具体事项描述费用具体事项描述费用具体事项描述费用具体事项描述费用具体事项描述费用具体事项描述费用具体事项描述费用具体</td>
+                                            <td class="verticaltop">xxxxxxx</td>
+                                            <td class="verticaltop">xxxxxxx</td>
+                                            <td class="verticaltop">xxxxxxx</td>
+                                            <td class="textwrap">费用具体事项描述费用具体事项描述费用具体事项描述费用具体事项描述费用具体事项描述费用具体事项描述费用具体事项描述费用具体事项描述费用具体事项描述费用具体</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="verticaltop">2</td>
+                                            <td class="verticaltop">xxxx</td>
+                                            <td class="verticaltop">xxxx</td>
+                                            <td class="verticaltop">2016-07-05</td>
+                                            <td class="verticaltop">12345.00</td>
+                                            <td class="textwrap">费用具体事项描述</td>
+                                            <td class="verticaltop">xxxxxxx</td>
+                                            <td class="verticaltop">xxxxxxx</td>
+                                            <td class="verticaltop">xxxxxxx</td>
+                                            <td class="textwrap">费用具体事项描述</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="verticaltop">3</td>
+                                            <td class="verticaltop">xxxx</td>
+                                            <td class="verticaltop">xxxx</td>
+                                            <td class="verticaltop">2016-07-05</td>
+                                            <td class="verticaltop">12345.00</td>
+                                            <td class="textwrap">费用具体事项描述</td>
+                                            <td class="verticaltop">xxxxxxx</td>
+                                            <td class="verticaltop">xxxxxxx</td>
+                                            <td class="verticaltop">xxxxxxx</td>
+                                            <td class="textwrap">费用具体事项描述</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="verticaltop">4</td>
+                                            <td class="verticaltop">xxxx</td>
+                                            <td class="verticaltop">xxxx</td>
+                                            <td class="verticaltop">2016-07-05</td>
+                                            <td class="verticaltop">12345.00</td>
+                                            <td class="textwrap">费用具体事项描述</td>
+                                            <td class="verticaltop">xxxxxxx</td>
+                                            <td class="verticaltop">xxxxxxx</td>
+                                            <td class="verticaltop">xxxxxxx</td>
+                                            <td class="textwrap">费用具体事项描述</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="verticaltop">5</td>
+                                            <td class="verticaltop">xxxx</td>
+                                            <td class="verticaltop">xxxx</td>
+                                            <td class="verticaltop">2016-07-05</td>
+                                            <td class="verticaltop">12345.00</td>
+                                            <td class="textwrap">费用具体事项描述</td>
+                                            <td class="verticaltop">xxxxxxx</td>
+                                            <td class="verticaltop">xxxxxxx</td>
+                                            <td class="verticaltop">xxxxxxx</td>
+                                            <td class="textwrap">费用具体事项描述</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                              </div>   
+                        </div>
+                        <div class="ibox-content mbt10">
+                            <div class="textRight">费用合计：123456.23</div>
+                        </div>
+                        
+                        <div class="ibox-title">
+                          <h5>增值税专用发票</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr class="textCenter">
+                                            <th class="text-nowrap" width="15">序号</th>
+                                            <th class="text-nowrap">发票费用类型</th>
+                                            <th class="text-nowrap">发票税率</th>
+                                            <th class="text-nowrap">发票税额</th>
+                                            <th class="text-nowrap">发票号</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody align="center">
+                                        <tr>
+                                            <td class="verticaltop">1</td>
+                                            <td class="verticaltop">通讯费</td>
+                                            <td class="verticaltop">6%</td>
+                                            <td class="verticaltop">123456.23</td>
+                                            <td class="textwrap">1234567890,9876543210,3216549870,7894561230</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="verticaltop">2</td>
+                                            <td class="verticaltop">加油票</td>
+                                            <td class="verticaltop">11%</td>
+                                            <td class="verticaltop">123456.23</td>
+                                            <td class="textwrap">1234567890,9876543210,3216549870,7894561230</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="verticaltop">3</td>
+                                            <td class="verticaltop">住宿票</td>
+                                            <td class="verticaltop">6%</td>
+                                            <td class="verticaltop">123456.23</td>
+                                            <td class="textwrap">1234567890,9876543210,3216549870,7894561230</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="ibox-content mbt10">
+                            <div class="textRight">费用合计：123456.23</div>
+                        </div>
+                        
+                        <div class="ibox-title">
+                            <h5>审批流转</h5>
+                        </div>
+                        <div class="ibox-content mbt10">
+                            <div class="row current">
+                                <label class="col-sm-2 control-label text-nowrap">当前状态：&nbsp;<button disabled="disabled" type="button" class="btn btn-info btn-xs">待审批</button></label>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-form">
+                                    <thead>
+                                        <tr>
+                                            <th width="80" class="text-nowrap">时间</th>
+                                            <th width="50" class="text-nowrap">审批状态</th>
+                                            <th width="100" class="text-nowrap">处理环节</th>
+                                            <th width="50" class="text-nowrap">当前审批人</th>
+                                            <th width="300" class="text-nowrap">审批意见</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td width="80">2016年2月16日 9:00</td>
+                                            <td width="50"></td>
+                                            <td width="100">事业部总审批</td>
+                                            <td width="50">赵文阁</td>
+                                            <td width="300"></td>
+                                      </tr>
+                                        <tr>
+                                            <td width="80">2016年2月16日 10:00</td>
+                                          <td width="50">通过</td>
+                                            <td width="100">财务总监审批</td>
+                                            <td width="50">赵文阁</td>
+                                            <td width="300"></td>
+                                      </tr>
+                                        <tr>
+                                            <td width="80">2016年2月16日 11:00</td>
+                                          <td width="50">通过</td>
+                                            <td width="100">财务审批审批</td>
+                                            <td width="50">赵文阁</td>
+                                            <td width="300"></td>
+                                      </tr>
+                                    </tbody>
+                                </table>
+                          </div>
+                        </div>
+                        
+                        <div class="ibox-title">
+                            <h5>审批意见</h5>
+                        </div>
+                        <div class="ibox-content mbt10">
+                            <textarea rows="4" class="form-control"></textarea>
+                      </div>
+                        
+                      <div class="ibox-content buttons footer-box">
+                          <a class="btn btn-warning btn-bitbucket btn-sm back"><i class="fa fa-times"></i> 返回</a>&nbsp;
+                          <a class="btn btn-danger btn-bitbucket btn-sm cancelcase"><i class="fa fa-times"></i> 取消超标流程</a>&nbsp;
+                          <a class="btn btn-primary btn-bitbucket btn-sm setcase"><i class="fa fa-check"></i> 设定超标流程</a>&nbsp;
+                          <a class="btn btn-primary btn-bitbucket btn-sm transfer"><i class="fa fa-check"></i> 转其他财务</a>&nbsp;
+                          <a class="btn btn-warning btn-bitbucket btn-sm cfo"><i class="fa fa-file-o"></i> 补正</a>&nbsp;
+                          <a class="btn btn-danger btn-bitbucket btn-sm correctreject"><i class="fa fa-times"></i> 驳回</a>&nbsp;
+                          <a class="btn btn-primary btn-bitbucket btn-sm submit_ap"><i class="fa fa-check"></i> 同意</a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div>
+                    <strong>Copyright</strong> 四川长虹佳华信息产品有限责任公司 &copy; 2016
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    </div>
+
+   <!-- Mainly scripts -->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery-ui-1.10.4.min.js"></script>
+    <script src="js/bootstrap.min.js?v=3.4.0"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/hplus.js?v=2.2.0"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- layer javascript -->
+	<script src="js/plugins/layer/layer.min.js"></script>
+    <script src="js/buttons.js"></script>
+    <script src="js/check_all.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+.multi_select {
+	overflow:hidden;
+	float:left;
+	background-color: #FFFFFF;
+    border:1px solid #999;
+    border-radius: 1px;
+    color: inherit;
+    display: block;
+    padding: 0;
+    padding-left: 3px;
+	width:180px !important;
+}
+
+.multi_select_focus {
+	background-color: #FFFFFF;
+    border-color: #1ab394 !important;
+}
+.multi_select input:first-child{
+	margin:6px;
+}
+.container {
+	background-color: #FFFFFF;
+	position:absolute;
+	z-index:1000;
+    width: 170px !important;
+	border: 1px solid gray;
+}
+.select_rel{
+	border:0!important;
+	}
+.container_top {
+	border-bottom: 1px solid gray;
+}
+.content {
+    width: 100%;
+	background-color: #fff;
+	overflow-y: auto;
+}
+.content div{
+	border-bottom: 1px solid gray;
+	margin-top:0px;
+	height:24px;
+}
+.content div:last-child{
+    border-bottom: none;
+} 
+.ok {
+
+	display: block;
+	float: right;
+	height: 22px;
+}
+
+.hidden {
+	display:none;
+}
