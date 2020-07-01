@@ -22,7 +22,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<spring.version>4.1.5.RELEASE</spring.version>
 		<jackson.version>2.6.3</jackson.version>
-		<quartz.version>2.2.1</quartz.version>
+		<quartz.version>2.3.2</quartz.version>
 		<activiti-version>5.22.0</activiti-version>
 		<hibernate.version>4.3.8.Final</hibernate.version>
 		<dict>loanSys</dict><!-- 要发布的项目名称 -->
